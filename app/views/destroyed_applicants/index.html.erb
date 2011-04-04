@@ -1,0 +1,44 @@
+<h1>Recycle Bin</h1>
+
+<table border="1">
+  <tr>
+    <th>Points</th>
+    <th>Surname</th>
+    <th>First Name</th>
+    <th>Middle Name</th>
+    <th>Student Number</th>
+    <th>Sex</th>
+    <th>Course</th>
+    <th>College</th>
+    <th>Province</th>
+    <th>Rank 1 Dormitory</th>
+    <th>Rank 2 Dormitory</th>
+    <th>Rank 3 Dormitory</th>
+    <th>Application Date</th>
+  </tr>
+
+<% @destroyed_applicants.each do |destroyed_applicant| %>
+  <tr>
+    <td><%= destroyed_applicant.points %></td>
+    <td><%= destroyed_applicant.sName %></td>
+	<td><%= destroyed_applicant.fName %></td>
+	<td><%= destroyed_applicant.mName %></td>
+    <td><%= destroyed_applicant.sNum %></td>
+    <td><%= destroyed_applicant.sex %></td>
+    <td><%= destroyed_applicant.course %></td>
+    <td><%= destroyed_applicant.college %></td>
+    <td><%= destroyed_applicant.provinceName %></td>
+    <td><%= destroyed_applicant.rank1 %></td>
+    <td><%= destroyed_applicant.rank2 %></td>
+    <td><%= destroyed_applicant.rank3 %></td>
+	<td><%= destroyed_applicant.created_at %></td>
+    <td><%= link_to 'Show', destroyed_applicant %></td>
+    <td><%= button_to 'Restore', destroyed_applicant, :controller=>"destroyed_applicants", :action=>"destroy", :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<br/><%= link_to 'Back', :controller => "applicants", :action => "index" %>
+<br/><%= link_to "Logout",   :action=>'login' %>

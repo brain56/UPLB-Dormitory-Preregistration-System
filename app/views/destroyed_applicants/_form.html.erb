@@ -1,0 +1,125 @@
+<%= form_for(@destroyed_applicant) do |f| %>
+  <% if @destroyed_applicant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@destroyed_applicant.errors.count, "error") %> prohibited this destroyed_applicant from being saved:</h2>
+
+      <ul>
+      <% @destroyed_applicant.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id %><br />
+    <%= f.text_field :id %>
+  </div>
+  <div class="field">
+    <%= f.label :income %><br />
+    <%= f.text_field :income %>
+  </div>
+  <div class="field">
+    <%= f.label :itr %><br />
+    <%= f.text_field :itr %>
+  </div>
+  <div class="field">
+    <%= f.label :electricity %><br />
+    <%= f.text_field :electricity %>
+  </div>
+  <div class="field">
+    <%= f.label :admission %><br />
+    <%= f.text_field :admission %>
+  </div>
+  <div class="field">
+    <%= f.label :picture %><br />
+    <%= f.text_field :picture %>
+  </div>
+  <div class="field">
+    <%= f.label :sName %><br />
+    <%= f.text_field :sName %>
+  </div>
+  <div class="field">
+    <%= f.label :fName %><br />
+    <%= f.text_field :fName %>
+  </div>
+  <div class="field">
+    <%= f.label :mName %><br />
+    <%= f.text_field :mName %>
+  </div>
+  <div class="field">
+    <%= f.label :sNum %><br />
+    <%= f.text_field :sNum %>
+  </div>
+  <div class="field">
+    <%= f.label :sex %><br />
+    <%= f.text_field :sex %>
+  </div>
+  <div class="field">
+    <%= f.label :course %><br />
+    <%= f.text_field :course %>
+  </div>
+  <div class="field">
+    <%= f.label :college %><br />
+    <%= f.text_field :college %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :pEmail %><br />
+    <%= f.text_field :pEmail %>
+  </div>
+  <div class="field">
+    <%= f.label :pNum %><br />
+    <%= f.text_field :pNum %>
+  </div>
+  <div class="field">
+    <%= f.label :pAreaCode %><br />
+    <%= f.text_field :pAreaCode %>
+  </div>
+  <div class="field">
+    <%= f.label :pCell %><br />
+    <%= f.text_field :pCell %>
+  </div>
+  <div class="field">
+    <%= f.label :rank1 %><br />
+    <%= f.text_field :rank1 %>
+  </div>
+  <div class="field">
+    <%= f.label :rank2 %><br />
+    <%= f.text_field :rank2 %>
+  </div>
+  <div class="field">
+    <%= f.label :rank3 %><br />
+    <%= f.text_field :rank3 %>
+  </div>
+  <div class="field">
+    <%= f.label :rank4 %><br />
+    <%= f.text_field :rank4 %>
+  </div>
+  <div class="field">
+    <%= f.label :rank5 %><br />
+    <%= f.text_field :rank5 %>
+  </div>
+  <div class="field">
+    <%= f.label :rank6 %><br />
+    <%= f.text_field :rank6 %>
+  </div>
+  <div class="field">
+    <%= f.label :created_at %><br />
+    <%= f.datetime_select :created_at %>
+  </div>
+  <div class="field">
+    <%= f.label :updated_at %><br />
+    <%= f.datetime_select :updated_at %>
+  </div>
+  <div class="field">
+    <%= f.label :provinceName %><br />
+    <%= f.text_field :provinceName %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

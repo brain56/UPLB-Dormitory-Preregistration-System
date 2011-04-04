@@ -1,0 +1,98 @@
+<h1>Reservations successfully generated </h1>
+
+<%= link_to 'New Applicant', new_applicant_path %>
+|
+<%= link_to 'All', :controller => "applicants", :action => "index" %>
+|
+<%= link_to 'ACCI', :controller => "applicants", :action => "viewACCIReservation" %>
+|
+<%= link_to 'ATI', :controller => "applicants", :action => "viewATIReservation" %>
+|
+<%= link_to 'Maquiling Residence Hall', :controller => "applicants", :action => "viewMarehaReservation" %>
+|
+<%= link_to 'Men\'s Residence Hall/COED', :controller => "applicants", :action => "viewMensReservation" %>
+|
+<%= link_to 'New Dormitory', :controller => "applicants", :action => "viewNewDormReservation" %>
+|
+<%= link_to 'New Forestry Residence Hall', :controller => "applicants", :action => "viewNewForehaReservation" %>
+|
+<%= link_to "Logout",   :action=>'login' %>
+<br/>
+<% @applicants.each do |applicant| %>
+	<% applicant.reservedIn = '' %>
+	<% applicant.save %>
+<%end%>
+
+<% @applicants.each do |applicant| %>
+	<% success = 0 %>
+	<br/>Reserving <strong><%= applicant.sName  %></strong>...
+	<br/>Rank 1 Dormitory = <%= rank1Dorm = applicant.rank1 %>
+	<br/>Rank 2 Dormitory = <%= rank2Dorm = applicant.rank2 %>
+	<br/>Rank 3 Dormitory = <%= rank3Dorm = applicant.rank3 %>
+	<br/>Rank 4 Dormitory = <%= rank4Dorm = applicant.rank4 %>
+	<br/>Rank 5 Dormitory = <%= rank5Dorm = applicant.rank5 %>
+	<br/>Rank 6 Dormitory = <%= rank6Dorm = applicant.rank6 %>
+		<br/>
+		<% if rank1Dorm == 'acci' then capacity = ACCI_CAPACITY end %>
+		<% if rank1Dorm == 'ati' then capacity = ATI_CAPACITY end%>
+		<% if rank1Dorm == 'mareha' then capacity = MAREHA_CAPACITY end%>
+		<% if rank1Dorm == 'mens' then capacity = MENS_CAPACITY end%>
+		<% if rank1Dorm == 'new' then capacity = NEW_CAPACITY end%>
+		<% if rank1Dorm == 'newforeha' then capacity = NEWFOREHA_CAPACITY end%>
+		<% count = Applicant.count_by_sql "SELECT COUNT(*) FROM applicants a WHERE a.reservedIn = '" << rank1Dorm<<"' " %> 
+		<% if count < capacity and success == 0  then applicant.reservedIn = rank1Dorm end %>
+		<% if count < capacity and success == 0  then success=1 end %>
+		
+		<% if rank2Dorm == 'acci' then capacity = ACCI_CAPACITY end %>
+		<% if rank2Dorm == 'ati' then capacity = ATI_CAPACITY end%>
+		<% if rank2Dorm == 'mareha' then capacity = MAREHA_CAPACITY end%>
+		<% if rank2Dorm == 'mens' then capacity = MENS_CAPACITY end%>
+		<% if rank2Dorm == 'new' then capacity = NEW_CAPACITY end%>
+		<% if rank2Dorm == 'newforeha' then capacity = NEWFOREHA_CAPACITY end%>
+		<% count = Applicant.count_by_sql "SELECT COUNT(*) FROM applicants a WHERE a.reservedIn = '" << rank2Dorm<<"' " %> 
+		<% if count < capacity and success == 0  then applicant.reservedIn = rank2Dorm end %>
+		<% if count < capacity and success == 0  then success=1 end %>
+		
+		<% if rank3Dorm == 'acci' then capacity = ACCI_CAPACITY end %>
+		<% if rank3Dorm == 'ati' then capacity = ATI_CAPACITY end%>
+		<% if rank3Dorm == 'mareha' then capacity = MAREHA_CAPACITY end%>
+		<% if rank3Dorm == 'mens' then capacity = MENS_CAPACITY end%>
+		<% if rank3Dorm == 'new' then capacity = NEW_CAPACITY end%>
+		<% if rank3Dorm == 'newforeha' then capacity = NEWFOREHA_CAPACITY end%>
+		<% count = Applicant.count_by_sql "SELECT COUNT(*) FROM applicants a WHERE a.reservedIn = '" << rank3Dorm<<"' " %> 
+		<% if count < capacity and success == 0  then applicant.reservedIn = rank3Dorm end %>
+		<% if count < capacity and success == 0  then success=1 end %>
+		
+		<% if rank4Dorm == 'acci' then capacity = ACCI_CAPACITY end %>
+		<% if rank4Dorm == 'ati' then capacity = ATI_CAPACITY end%>
+		<% if rank4Dorm == 'mareha' then capacity = MAREHA_CAPACITY end%>
+		<% if rank4Dorm == 'mens' then capacity = MENS_CAPACITY end%>
+		<% if rank4Dorm == 'new' then capacity = NEW_CAPACITY end%>
+		<% if rank4Dorm == 'newforeha' then capacity = NEWFOREHA_CAPACITY end%>
+		<% count = Applicant.count_by_sql "SELECT COUNT(*) FROM applicants a WHERE a.reservedIn = '" << rank4Dorm<<"' " %> 
+		<% if count < capacity and success == 0  then applicant.reservedIn = rank4Dorm end %>
+		<% if count < capacity and success == 0  then success=1 end %>
+		
+		<% if rank5Dorm == 'acci' then capacity = ACCI_CAPACITY end %>
+		<% if rank5Dorm == 'ati' then capacity = ATI_CAPACITY end%>
+		<% if rank5Dorm == 'mareha' then capacity = MAREHA_CAPACITY end%>
+		<% if rank5Dorm == 'mens' then capacity = MENS_CAPACITY end%>
+		<% if rank5Dorm == 'new' then capacity = NEW_CAPACITY end%>
+		<% if rank5Dorm == 'newforeha' then capacity = NEWFOREHA_CAPACITY end%>
+		<% count = Applicant.count_by_sql "SELECT COUNT(*) FROM applicants a WHERE a.reservedIn = '" << rank5Dorm<<"' " %> 
+		<% if count < capacity and success == 0  then applicant.reservedIn = rank5Dorm end %>
+		<% if count < capacity and success == 0  then success=1 end %>
+		
+		<% if rank6Dorm == 'acci' then capacity = ACCI_CAPACITY end %>
+		<% if rank6Dorm == 'ati' then capacity = ATI_CAPACITY end%>
+		<% if rank6Dorm == 'mareha' then capacity = MAREHA_CAPACITY end%>
+		<% if rank6Dorm == 'mens' then capacity = MENS_CAPACITY end%>
+		<% if rank6Dorm == 'new' then capacity = NEW_CAPACITY end%>
+		<% if rank6Dorm == 'newforeha' then capacity = NEWFOREHA_CAPACITY end%>
+		<% count = Applicant.count_by_sql "SELECT COUNT(*) FROM applicants a WHERE a.reservedIn = '" << rank6Dorm<<"' " %> 
+		<% if count < capacity and success == 0  then applicant.reservedIn = rank6Dorm end %>
+		<% if count < capacity and success == 0  then success=1 end %>
+		<strong><%= applicant.sName  %></strong> is now reserved for <%= applicant.reservedIn %>
+		<% applicant.save %>
+	<br/>
+<% end %>
