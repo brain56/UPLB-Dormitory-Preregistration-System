@@ -1,0 +1,105 @@
+ADMIN VIEW!!!
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Surname:</b>
+  <%= @applicant.sName %>
+</p>
+<p>
+  <b>Given Name:</b>
+  <%= @applicant.fName %>
+</p>
+<p>
+  <b>Middle Name:</b>
+  <%= @applicant.mName %>
+</p>
+
+<p>
+  <b>Student Number:</b>
+  2011-<%= @applicant.sNum %>
+</p>
+
+<p>
+  <b>Sex:</b>
+  <%= @applicant.sex %>
+</p>
+
+<p>
+  <b>Course:</b>
+  <%= @applicant.course %>
+</p>
+
+<p>
+  <b>College:</b>
+  <%= @applicant.college %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @applicant.address %>
+</p>
+
+<p>
+  <b>Province Name:</b>
+  <%= @applicant.provinceName %>
+</p>
+
+<p>
+  <b>Parent's Email Address:</b>
+  <%= @applicant.pEmail %>
+</p>
+
+<p>
+  <b>Parent's Telephone Number:</b>
+  <%= @applicant.pNum %>
+</p>
+
+<p>
+  <b>Area Code:</b>
+  <%= @applicant.pAreaCode %>
+</p>
+
+<p>
+  <b>Parent's Cellphone Number:</b>
+  <%= @applicant.pCell %>
+</p>
+
+<p>
+  <b>Rank 1 Dormitory:</b>
+  <%= @applicant.rank1 %>
+</p>
+
+<p>
+  <b>Rank 2 Dormitory:</b>
+  <%= @applicant.rank2 %>
+</p>
+
+<p>
+  <b>Rank 3 Dormitory:</b>
+  <%= @applicant.rank3 %>
+</p>
+
+<p>
+  <b>Admission Slip:</b>
+  <br/><%= image_tag url_for(:controller => "applicants", :action => "showImage1", :id => @applicant.id) %>
+</p>
+ 
+<p>
+  <b>Meralco/Electricity Service Provider:</b>
+  <br/><%= image_tag url_for(:controller => "applicants", :action => "showImage2", :id => @applicant.id) %>
+</p>
+
+
+<p>
+  <b>Income Tax Returns:</b>
+  <br/><%= image_tag url_for(:controller => "applicants", :action => "showImage3", :id => @applicant.id) %>
+</p>
+
+<p>
+  <b>Picture:</b>
+  <br/><%= image_tag url_for(:controller => "applicants", :action => "showImage4", :id => @applicant.id) %>
+</p>
+
+<%= link_to 'Edit', edit_applicant_path(@applicant) %> |
+<%= link_to 'OK', "/#" %>

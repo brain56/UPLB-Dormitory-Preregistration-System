@@ -1,0 +1,2 @@
+module DestroyedApplicantsHelper
+end

@@ -1,0 +1,13 @@
+<% if !session[:user_id] then redirect_to :action=> 'login'%>  <% end %>
+	
+<!--#displays hello (username)-->
+Hello, <strong><%=session[:user_id]%></strong>.
+
+<!--#creates logout link, when the link is clicked, the controller is User and the method executed will be logout.-->
+<br/>
+<br/>
+<%= link_to "See Applicant List", applicants_path  if session[:user_id]=="admin"%>
+<br/>
+<%= link_to "Edit information", edit_applicant_path(Applicant.find(:all,:conditions => ["sNum= ?",session[:user_id] ] ))  if session[:user_id]!="admin"%>
+<br/>
+<%= link_to "Logout",   :action=>'login' %>
