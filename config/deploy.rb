@@ -1,8 +1,8 @@
 set :user, 'zealart'  # Your hosting account's username
 set :domain, 'durendal.uplb.edu.ph'  # Hosting servername where your account is located
 set :project, 'UPLB-Dormitory-Preregistration-System'  # Your application as its called in the repository
-set :application, '/'  # Your app's location (domain or subdomain)
-set :applicationdir, "sftp://durendal.uplb.edu.ph/~zealart/public_html"  # The location of your application on your hosting (my differ for each hosting provider)
+set :application, '/c'  # Your app's location (domain or subdomain)
+set :applicationdir, "http://durendal.uplb.edu.ph/~zealart/"  # The location of your application on your hosting (my differ for each hosting provider)
 # version control config
 set :scm, 'git'
 set :repository,  "git@github.com:brain56/UPLB-Dormitory-Preregistration-System.git" # Your git repository location
