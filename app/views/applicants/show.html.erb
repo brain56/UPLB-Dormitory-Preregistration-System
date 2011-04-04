@@ -1,0 +1,159 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Surname:</b>
+  <%= @applicant.sName %>
+</p>
+<p>
+  <b>Given Name:</b>
+  <%= @applicant.fName %>
+</p>
+<p>
+  <b>Middle Name:</b>
+  <%= @applicant.mName %>
+</p>
+
+<p>
+  <b>Student Number:</b>
+  2011-<%= @applicant.sNum %>
+</p>
+
+<p>
+  <b>Sex:</b>
+  <%= @applicant.sex %>
+</p>
+
+<p>
+  <b>Course:</b>
+  <%= @applicant.course %>
+</p>
+
+<p>
+  <b>College:</b>
+  <%= @applicant.college %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @applicant.address %>
+</p>
+
+<p>
+  <b>Province Name:</b>
+  <%= @applicant.provinceName %>
+</p>
+
+<p>
+  <b>Gross Annual Income of Both Parents:</b>
+  <%= @applicant.income %>
+</p>
+
+<p>
+  <b>Parent's Email Address:</b>
+  <%= @applicant.pEmail %>
+</p>
+
+<p>
+  <b>Parent's Telephone Number:</b>
+  <%= @applicant.pNum %>
+</p>
+
+<p>
+  <b>Area Code:</b>
+  <%= @applicant.pAreaCode %>
+</p>
+
+<p>
+  <b>Parent's Cellphone Number:</b>
+  +63<%= @applicant.pCell %>
+</p>
+
+<p>
+  <b>Rank 1 Dormitory:</b>
+	<%=  "ACCI Dormitory" if @applicant.rank1 == 'acci' %>
+	<%=  "ATI Dormitory" if @applicant.rank1 == 'ati' %>
+	<%=  "Maquiling Residence Hall" if @applicant.rank1 == 'mareha' %>
+	<%=  "Men's Residence Hall/COED" if @applicant.rank1 == 'mens' %>
+	<%=  "New Dormitory" if @applicant.rank1 == 'new' %>
+	<%=  "New Forestry Residence Hall" if @applicant.rank1 == 'newforeha' %>
+</p>
+
+<p>
+  <b>Rank 2 Dormitory:</b>
+	<%=  "ACCI Dormitory" if @applicant.rank2== 'acci' %>
+	<%=  "ATI Dormitory" if @applicant.rank2 == 'ati' %>
+	<%=  "Maquiling Residence Hall" if @applicant.rank2 == 'mareha' %>
+	<%=  "Men's Residence Hall/COED" if @applicant.rank2 == 'mens' %>
+	<%=  "New Dormitory" if @applicant.rank2 == 'new' %>
+	<%=  "New Forestry Residence Hall" if @applicant.rank2 == 'newforeha' %>
+</p>
+
+<p>
+  <b>Rank 3 Dormitory:</b>
+	<%=  "ACCI Dormitory" if @applicant.rank3 == 'acci' %>
+	<%=  "ATI Dormitory" if @applicant.rank3 == 'ati' %>
+	<%=  "Maquiling Residence Hall" if @applicant.rank3 == 'mareha' %>
+	<%=  "Men's Residence Hall/COED" if @applicant.rank3 == 'mens' %>
+	<%=  "New Dormitory" if @applicant.rank3 == 'new' %>
+	<%=  "New Forestry Residence Hall" if @applicant.rank3 == 'newforeha' %>
+</p>
+
+<p>
+  <b>Rank 4 Dormitory:</b>
+	<%=  "ACCI Dormitory" if @applicant.rank4 == 'acci' %>
+	<%=  "ATI Dormitory" if @applicant.rank4 == 'ati' %>
+	<%=  "Maquiling Residence Hall" if @applicant.rank4 == 'mareha' %>
+	<%=  "Men's Residence Hall/COED" if @applicant.rank4 == 'mens' %>
+	<%=  "New Dormitory" if @applicant.rank4 == 'new' %>
+	<%=  "New Forestry Residence Hall" if @applicant.rank4 == 'newforeha' %>
+</p>
+
+<p>
+  <b>Rank 5 Dormitory:</b>
+	<%=  "ACCI Dormitory" if @applicant.rank5 == 'acci' %>
+	<%=  "ATI Dormitory" if @applicant.rank5 == 'ati' %>
+	<%=  "Maquiling Residence Hall" if @applicant.rank5 == 'mareha' %>
+	<%=  "Men's Residence Hall/COED" if @applicant.rank5 == 'mens' %>
+	<%=  "New Dormitory" if @applicant.rank5 == 'new' %>
+	<%=  "New Forestry Residence Hall" if @applicant.rank5 == 'newforeha' %>
+</p>
+
+<p>
+  <b>Rank 6 Dormitory:</b>
+	<%=  "ACCI Dormitory" if @applicant.rank6 == 'acci' %>
+	<%=  "ATI Dormitory" if @applicant.rank6 == 'ati' %>
+	<%=  "Maquiling Residence Hall" if @applicant.rank6 == 'mareha' %>
+	<%=  "Men's Residence Hall/COED" if @applicant.rank6 == 'mens' %>
+	<%=  "New Dormitory" if @applicant.rank6 == 'new' %>
+	<%=  "New Forestry Residence Hall" if @applicant.rank6 == 'newforeha' %>
+</p>
+
+<p>
+  <b>Admission Slip:</b>
+  <br/><%= image_tag url_for(:controller => "applicants", :action => "showImage1", :id => @applicant.id) %>
+</p>
+ 
+<p>
+  <b>Meralco/Electricity Service Provider:</b>
+  <br/><%= image_tag url_for(:controller => "applicants", :action => "showImage2", :id => @applicant.id) %>
+</p>
+
+
+<p>
+  <b>Income Tax Returns:</b>
+  <br/><%= image_tag url_for(:controller => "applicants", :action => "showImage3", :id => @applicant.id) %>
+</p>
+
+<p>
+  <b>Picture:</b>
+  <br/><%= image_tag url_for(:controller => "applicants", :action => "showImage4", :id => @applicant.id) %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @applicant.password %>
+</p>
+
+<%= link_to 'Edit', edit_applicant_path(@applicant) %> |
+<%= link_to 'OK', "/#" if !session[:user_id]%>
+<%= link_to 'Back', :back if session[:user_id]=="admin"%>

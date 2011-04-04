@@ -1,0 +1,49 @@
+<h1>Listing applicants</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Snum</th>
+    <th>Sex</th>
+    <th>Course</th>
+    <th>College</th>
+    <th>Address</th>
+    <th>Province</th>
+    <th>Pemail</th>
+    <th>Pnum</th>
+    <th>Pareacode</th>
+    <th>Pcell</th>
+    <th>Mens</th>
+    <th>Acci</th>
+    <th>Ati</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @applicants.each do |applicant| %>
+  <tr>
+    <td><%= applicant.name %></td>
+    <td><%= applicant.sNum %></td>
+    <td><%= applicant.sex %></td>
+    <td><%= applicant.course %></td>
+    <td><%= applicant.college %></td>
+    <td><%= applicant.address %></td>
+    <td><%= applicant.province %></td>
+    <td><%= applicant.pEmail %></td>
+    <td><%= applicant.pNum %></td>
+    <td><%= applicant.pAreaCode %></td>
+    <td><%= applicant.pCell %></td>
+    <td><%= applicant.mens %></td>
+    <td><%= applicant.acci %></td>
+    <td><%= applicant.ati %></td>
+    <td><%= link_to 'Show', applicant %></td>
+    <td><%= link_to 'Edit', edit_applicant_path(applicant) %></td>
+    <td><%= link_to 'Destroy', applicant, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Applicant', new_applicant_path %>

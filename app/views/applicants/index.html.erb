@@ -1,0 +1,93 @@
+<h1>Applicants sorted by date of application</h1>
+
+<%= link_to 'New Applicant', new_applicant_path %>
+|
+<%= link_to 'All', :controller => "applicants", :action => "index" %>
+|
+<%= link_to 'ACCI', :controller => "applicants", :action => "viewACCIReservation" %>
+|
+<%= link_to 'ATI', :controller => "applicants", :action => "viewATIReservation" %>
+|
+<%= link_to 'Maquiling Residence Hall', :controller => "applicants", :action => "viewMarehaReservation" %>
+|
+<%= link_to 'Men\'s Residence Hall/COED', :controller => "applicants", :action => "viewMensReservation" %>
+|
+<%= link_to 'New Dormitory', :controller => "applicants", :action => "viewNewDormReservation" %>
+|
+<%= link_to 'New Forestry Residence Hall', :controller => "applicants", :action => "viewNewForehaReservation" %>
+|
+<%= link_to 'Recycle Bin', :controller => "destroyed_applicants", :action => "index" %>
+|
+<%= link_to "Logout",   :action=>'login' %>
+
+<table border="1">
+  <tr>
+	<th><%= link_to 'Points', :controller => "applicants", :action => "sortByPoints" %></th>
+    <th><%= link_to 'Surname', :controller => "applicants", :action => "sortByName" %></th>
+    <th>First Name</th>
+    <th>Middle Name</th>
+    <th>Student Number</th>
+    <th>Sex</th>
+    <th>Course</th>
+    <th>College</th>
+    <th>Province</th>
+    <th>Reserved In</th>
+    <th>Rank 1 Dormitory</th>
+    <th>Rank 2 Dormitory</th>
+    <th>Rank 3 Dormitory</th>
+    <th><%= link_to 'Application Date', :controller => "applicants", :action => "index" %></th>
+  </tr>
+
+<% @applicants.each do |applicant| %>
+  <tr>
+	<td><%= applicant.points %></td>
+    <td><%= applicant.sName %></td>
+	<td><%= applicant.fName %></td>
+	<td><%= applicant.mName %></td>
+    <td><%= applicant.sNum %></td>
+    <td><%= applicant.sex %></td>
+    <td><%= applicant.course %></td>
+    <td><%= applicant.college %></td>
+    <td><%= applicant.provinceName %></td>
+    <td><%= applicant.reservedIn %></td>
+    <td><%= applicant.rank1 %></td>
+    <td><%= applicant.rank2 %></td>
+    <td><%= applicant.rank3 %></td>
+	<td><%= applicant.created_at %></td>
+    <td><%= link_to 'Show', applicant %></td>
+    <td><%= link_to 'Edit', edit_applicant_path(applicant) %></td>
+    <td><%= button_to 'Destroy', applicant, :controller => "applicants", :action => "destroy", :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'New Applicant', new_applicant_path %>
+|
+<%= link_to 'All', :controller => "applicants", :action => "index" %>
+|
+<%= link_to 'ACCI', :controller => "applicants", :action => "viewACCIReservation" %>
+|
+<%= link_to 'ATI', :controller => "applicants", :action => "viewATIReservation" %>
+|
+<%= link_to 'Maquiling Residence Hall', :controller => "applicants", :action => "viewMarehaReservation" %>
+|
+<%= link_to 'Men\'s Residence Hall/COED', :controller => "applicants", :action => "viewMensReservation" %>
+|
+<%= link_to 'New Dormitory', :controller => "applicants", :action => "viewNewDormReservation" %>
+|
+<%= link_to 'New Forestry Residence Hall', :controller => "applicants", :action => "viewNewForehaReservation" %>
+|
+<%= link_to 'Recycle Bin', :controller => "destroyed_applicants", :action => "index" %>
+|
+<%= link_to "Logout",   :action=>'login' %>
+
+<br/>
+<br/><strong>Dormitory Statuses:</strong>
+<br/>ACCI Capacity: <%= Applicant.count_by_sql "SELECT COUNT(*) FROM applicants a WHERE a.reservedIn = 'acci'" %>  / <%= ACCI_CAPACITY %>
+<br/>ATI Capacity: <%= Applicant.count_by_sql "SELECT COUNT(*) FROM applicants a WHERE a.reservedIn = 'ati'" %>  / <%= ATI_CAPACITY %>
+<br/>Men's Residence Hall/COED Capacity: <%= Applicant.count_by_sql "SELECT COUNT(*) FROM applicants a WHERE a.reservedIn = 'mens'" %>  / <%= MENS_CAPACITY %>
+<br/>Maquiling Residence Hall Capacity: <%= Applicant.count_by_sql "SELECT COUNT(*) FROM applicants a WHERE a.reservedIn = 'mareha'" %>  / <%= MAREHA_CAPACITY %>
+<br/>New Dormitory Capacity: <%= Applicant.count_by_sql "SELECT COUNT(*) FROM applicants a WHERE a.reservedIn = 'new'" %>  / <%= NEW_CAPACITY %>
+<br/>New Forestry Residence Hall Capacity: <%= Applicant.count_by_sql "SELECT COUNT(*) FROM applicants a WHERE a.reservedIn = 'newforeha'" %>  / <%= NEWFOREHA_CAPACITY %>
+<br/>
+<br/><%= link_to 'Generate Reservations', :controller => "applicants", :action => "generateReservations" %>

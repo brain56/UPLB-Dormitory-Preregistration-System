@@ -1,0 +1,435 @@
+<%= form_for(@applicant, :html=>{:multipart=>true}) do |f| %>
+  <% if @applicant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@applicant.errors.count, "error") %> prohibited this applicant from being saved:</h2>
+
+      <ul>
+      <% @applicant.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <script type="text/JavaScript">
+		function updateProvinceValue(prov){
+			if(prov=="Abra")
+				return 50;
+			if(prov=="Agusan del Norte")
+				return 50;
+			if(prov=="Agusan del Sur")
+				return 50;
+			if(prov=="Aklan")
+				return 50;
+			if(prov=="Albay")
+				return 50;
+			if(prov=="Antique")
+				return 50;
+			if(prov=="Apayao")
+				return 50;
+			if(prov=="Aurora")
+				return 50;
+			if(prov=="Basilan")
+				return 50;
+			if(prov=="Bataan")
+				return 50;
+			if(prov=="Batanes")
+				return 50;
+			if(prov=="Batangas")
+				return 33;
+			if(prov=="Benguet")
+				return 50;
+			if(prov=="Biliran")
+				return 50;
+			if(prov=="Bohol")
+				return 50;
+			if(prov=="Bukidnon")
+				return 50;
+			if(prov=="Bulacan")
+				return 50;
+			if(prov=="Cagayan")
+				return 50;
+			if(prov=="Camarines Norte")
+				return 50;
+			if(prov=="Camarines Sur")
+				return 50;
+			if(prov=="Camiguin")
+				return 50;
+			if(prov=="Capiz")
+				return 50;
+			if(prov=="Catanduanes")
+				return 50;
+			if(prov=="Cavite")
+				return 33;
+			if(prov=="Cebu")
+				return 50;
+			if(prov=="Compostela Valley")
+				return 50;
+			if(prov=="Cotabato")
+				return 50;
+			if(prov=="Davao del Norte")
+				return 50;
+			if(prov=="Davao del Sur")
+				return 50;
+			if(prov=="Davao Occidental")
+				return 50;
+			if(prov=="Davao Oriental")
+				return 50;
+			if(prov=="Dinagat Islands")
+				return 50;
+			if(prov=="Eastern Samar")
+				return 50;
+			if(prov=="Guimaras")
+				return 50;
+			if(prov=="Ifugao")
+				return 50;
+			if(prov=="Ilocos Norte")
+				return 50;
+			if(prov=="Ilocus Sur")
+				return 50;
+			if(prov=="Iloilo")
+				return 50;
+			if(prov=="Isabela")
+				return 50;
+			if(prov=="Kalinga")
+				return 50;
+			if(prov=="La Union")
+				return 50;
+			if(prov=="Alaminos, Laguna")
+				return 0;
+			if(prov=="Bay, Laguna")
+				return 0;
+			if(prov=="Binan, Laguna")
+				return 33;
+			if(prov=="Cabuyao, Laguna")
+				return 16;
+			if(prov=="Calamba, Laguna")
+				return 0;
+			if(prov=="Calauan, Laguna")
+				return 0;
+			if(prov=="Cavinti, Laguna")
+				return 33;
+			if(prov=="Famy, Laguna")
+				return 33;
+			if(prov=="Kalayaan, Laguna")
+				return 33;
+			if(prov=="Liliw, Laguna")
+				return 16;
+			if(prov=="Los Banos, Laguna")
+				return 0;
+			if(prov=="Luisiana, Laguna")
+				return 33;
+			if(prov=="Lumban, Laguna")
+				return 33;
+			if(prov=="Mabitac, Laguna")
+				return 33;
+			if(prov=="Magdalena, Laguna")
+				return 16;
+			if(prov=="Majayjay, Laguna")
+				return 16;
+			if(prov=="Nagcarlan, Laguna")
+				return 16;
+			if(prov=="Paete, Laguna")
+				return 33;
+			if(prov=="Pagsanjan, Laguna")
+				return 33;
+			if(prov=="Pakil, Laguna")
+				return 33;
+			if(prov=="Pangil, Laguna")
+				return 33;
+			if(prov=="Pila, Laguna")
+				return 16;
+			if(prov=="Rizal, Laguna")
+				return 16;
+			if(prov=="San Pablo, Laguna")
+				return 16;
+			if(prov=="San Pedro, Laguna")
+				return 33;
+			if(prov=="Sta Cruz, Laguna")
+				return 16;
+			if(prov=="Santa Maria, Laguna")
+				return 33;
+			if(prov=="Santa Rosa, Laguna")
+				return 16;
+			if(prov=="Siniloan, Laguna")
+				return 33;
+			if(prov=="Victoria, Laguna")
+				return 16;
+			if(prov=="Lanao del Norte")
+				return 50;
+			if(prov=="Lanao del Sur")
+				return 50;
+			if(prov=="Leyte")
+				return 50;
+			if(prov=="Maguindanao")
+				return 50;
+			if(prov=="Metro Manila")
+				return 50;
+			if(prov=="Marinduque")
+				return 50;
+			if(prov=="Masbate")
+				return 50;
+			if(prov=="Misamis Occidental")
+				return 50;
+			if(prov=="Misamis Oriental")
+				return 50;
+			if(prov=="Mountain Province")
+				return 50;
+			if(prov=="Negros Occidental")
+				return 50;
+			if(prov=="Negros Oriental")
+				return 50;
+			if(prov=="Northern Samar")
+				return 50;
+			if(prov=="Nueva Ecija")
+				return 50;
+			if(prov=="Nueva Vizcaya")
+				return 50;
+			if(prov=="Occidental Mindoro")
+				return 50;
+			if(prov=="Oriental Mindoro")
+				return 50;
+			if(prov=="Palawan")
+				return 50;
+			if(prov=="Pampanga")
+				return 50;
+			if(prov=="Pangasinan")
+				return 50;
+			if(prov=="Quezon")
+				return 33;
+			if(prov=="Quirino")
+				return 50;
+			if(prov=="Rizal")
+				return 33;
+			if(prov=="Romblon")
+				return 50;
+			if(prov=="Samar")
+				return 50;
+			if(prov=="Sarangani")
+				return 50;
+			if(prov=="Siargao Islands")
+				return 50;
+			if(prov=="Shariff Kabunsuan")
+				return 50;
+			if(prov=="Siquijor")
+				return 50;
+			if(prov=="Sorsogon")
+				return 50;
+			if(prov=="South Cotabato")
+				return 50;
+			if(prov=="Southern Leyte")
+				return 50;
+			if(prov=="Sultan Kudarat")
+				return 50;
+			if(prov=="Sulu")
+				return 50;
+			if(prov=="Surigao del Norte")
+				return 50;
+			if(prov=="Surigao del Sur")
+				return 50;
+			if(prov=="Tarlac")
+				return 50;
+			if(prov=="Tawi-Tawi")
+				return 50;
+			if(prov=="Zambales")
+				return 50;
+			if(prov=="Zamboanga del Norte")
+				return 50;
+			if(prov=="Zamboanga del Sur")
+				return 50;
+			if(prov=="Zamboanga Sibugay")
+				return 50;				
+		}
+		function updateIncomeValue(points, income){
+			if( income <= 134999 )
+				return Number(points) + Number(50);
+			if( income >= 135000 && income <= 249999 )
+				return Number(points) + Number(37.5);
+			if( income >= 250000 && income <= 499999)
+				return Number(points) + Number(25);
+			if( income>=500000 && income<=999999 )
+				return Number(points) + Number(12.5);
+			if(income>=1000000)
+				return Number(points) + Number(0);
+		}
+		
+		var swapVariableText="";
+		var swapVariableValue="";
+		
+	</script>
+  
+  <div class="field">
+    <%= f.label "Surname" %><br />
+    <%= f.text_field :sName %>
+  </div>
+  <div class="field">
+    <%= f.label "Given Name" %><br />
+    <%= f.text_field :fName %>
+  </div>
+  <div class="field">
+    <%= f.label "Middle Initial" %><br />
+    <%= f.text_field :mName, :size=>3%>
+  </div>
+  <div class="field">
+    Student Number<br/>
+    2011-<%= f.text_field :sNum, :size=>5%>
+  </div>
+  <div class="field">
+    Sex<br/>
+    <%= select( "applicant", "sex", { "Male" => "m", "Female" => "f" } ,{},{:onchange =>"
+	if(this.value=='f'){	rank1Text.value='ACCI'; 	rank2Text.value='Mens Residence Hall';	rank3Text.value='New Dormitory'; 	rank4Text.value='New Forestry Residence Hall'; 	rank5Text.value='Not Applicable'; 	rank6Text.value='Not Applicable'; 		applicant_rank1.value='acci'; 	applicant_rank2.value='mens';	applicant_rank3.value='new'; 	applicant_rank4.value='newforeha'; 	applicant_rank5.value='none'; 	applicant_rank6.value='none'; 		rank4Demote.disabled=true;	rank5Promote.disabled=true;	rank5Demote.disabled=true;	rank6Promote.disabled=true;		}else{	rank1Text.value='ACCI'; 	rank2Text.value='Mens Residence Hall';	rank3Text.value='New Dormitory'; 	rank4Text.value='New Forestry Residence Hall'; 	rank5Text.value='ATI'; 	rank6Text.value='Maquiling Residence Hall'; 		applicant_rank1.value='acci'; 	applicant_rank2.value='mens';	applicant_rank3.value='new'; 	applicant_rank4.value='newforeha'; 	applicant_rank5.value='ati'; 	applicant_rank6.value='mareha'; 		rank4Demote.disabled=false;	rank5Promote.disabled=false;	rank5Demote.disabled=false;	rank6Promote.disabled=false;	}	"} ) %>
+  </div>  
+  <div class="field">
+    Course<br/>
+    <%= f.text_field :course, :size=>4 %>
+  </div>
+  <div class="field">
+    College<br/>
+	<%= select( "applicant", "college", { "College of Agriculture" => "ca", "College of Agriculture/College of Arts and Sciences" => "cacas",  "College of Arts and Sciences" => "cas", "College of Development Communication" => "cdc", "College of Engineering and Agro-Industrial Technology" => "ceat", "College of Economics and Management" => "cem", "College of Forestry and Natural Resources" => "cfnr", "College of Human Ecology" => "che", "College of Veterinary Medicine" => "cvm", "School of Environmental Sciences and Management" => "sesam"},{},{ }) %>
+  </div>
+  <br/>
+  <div class="field">
+    <%= f.label "Street Address" %><br />
+    <%= f.text_field (:address).downcase %>
+  </div>
+  <div class="field">
+    Province<br/>
+	<%= select( "applicant", "provinceName", {" " => " ", "Abra"=>"Abra", "Agusan del Norte"=>"Agusan del Norte", "Agusan del Sur" =>"Agusan del Sur", "Aklan"=>"Aklan", "Albay"=>"Albay", "Antique"=>"Antique", "Apayao"=>"Apayao", "Aurora"=>"Aurora", "Basilan"=>"Basilan", "Bataan"=>"Bataan", "Batanes"=>"Batanes", "Batangas"=>"Batangas", "Benguet"=>"Benguet", "Biliran"=>"Biliran", "Bohol"=>"Bohol", "Bukidnon"=>"Bukidnon", "Bulacan"=>"Bulacan", "Cagayan"=>"Cagayan", "Camarines Norte"=>"Camarines Norte", "Camarines Sur"=>"Camarines Sur", "Camiguin"=> "Camiguin", "Capiz"=>"Capiz", "Catanduanes"=>"Catanduanes", "Cavite"=>"Cavite", "Cebu"=>"Cebu", "Compostela Valley"=>"Compostela Valley", "Cotabato"=>"Cotabato", "Davao del Norte"=>"Davao del Norte", "Davao del Sur"=>"Davao del Sur", "Davao Occidental"=>"Davao Occidental", "Davao Oriental"=>"Davao Oriental", "Dinagat Islands"=>"Dinagat Islands", "Eastern Samar"=>"Eastern Samar", "Guimaras"=>"Guimaras", "Ifugao"=>"Ifugao", "Ilocos Norte"=>"Ilocos Norte", "Ilocus Sur"=>"Ilocus Sur", "Iloilo"=>"Iloilo", "Isabela"=>"Isabela", "Kalinga"=>"Kalinga", "La Union"=>"La Union", "Alaminos, Laguna"=>"Alaminos, Laguna", "Bay, Laguna"=>"Bay, Laguna", "Binan, Laguna"=>"Binan, Laguna", "Cabuyao, Laguna"=>"Cabuyao, Laguna", "Calamba, Laguna"=>"Calamba, Laguna", "Calauan, Laguna"=>"Calauan, Laguna", "Cavinti, Laguna"=>"Cavinti, Laguna", "Famy, Laguna"=>"Famy, Laguna", "Kalayaan, Laguna"=>"Kalayaan, Laguna", "Liliw, Laguna"=>"Liliw, Laguna", "Los Banos, Laguna"=>"Los Banos, Laguna", "Luisiana, Laguna"=>"Luisiana, Laguna", "Lumban, Laguna"=>"Lumban, Laguna", "Mabitac, Laguna"=>"Mabitac, Laguna", "Magdalena, Laguna"=>"Magdalena, Laguna", "Majayjay, Laguna"=>"Majayjay, Laguna", "Nagcarlan, Laguna"=>"Nagcarlan, Laguna", "Paete, Laguna"=>"Paete, Laguna", "Pagsanjan, Laguna"=>"Pagsanjan, Laguna", "Pakil, Laguna"=>"Pakil, Laguna", "Pangil, Laguna"=>"Pangil, Laguna", "Pila, Laguna"=>"Pila, Laguna", "Rizal, Laguna"=>"Rizal, Laguna", "San Pablo, Laguna"=>"San Pablo, Laguna", "San Pedro, Laguna"=>"San Pedro, Laguna", "Sta Cruz, Laguna"=>"Sta Cruz, Laguna", "Santa Maria, Laguna"=>"Santa Maria, Laguna", "Santa Rosa, Laguna"=>"Santa Rosa, Laguna", "Siniloan, Laguna"=>"Siniloan, Laguna", "Victoria, Laguna"=>"Victoria, Laguna", "Lanao del Norte"=>"Lanao del Norte", "Lanao del Sur"=>"Lanao del Sur", "Leyte"=>"Leyte", "Maguindanao"=>"Maguindanao", "Metro Manila"=>"Metro Manila", "Marinduque"=>"Marinduque", "Masbate"=>"Masbate", "Misamis Occidental"=>"Misamis Occidental", "Misamis Oriental"=>"Misamis Oriental", "Mountain Province"=>"Mountain Province", "Negros Occidental"=>"Negros Occidental", "Negros Oriental"=>"Negros Oriental", "Northern Samar"=>"Northern Samar", "Nueva Ecija"=>"Nueva Ecija", "Nueva Vizcaya"=>"Nueva Vizcaya", "Occidental Mindoro"=>"Occidental Mindoro", "Oriental Mindoro"=>"Oriental Mindoro", "Palawan"=>"Palawan", "Pampanga"=>"Pampanga", "Pangasinan"=>"Pangasinan", "Quezon"=>"Quezon", "Quirino"=>"Quirino", "Rizal"=>"Rizal", "Romblon"=>"Romblon", "Samar"=>"Samar", "Sarangani"=>"Sarangani", "Siargao Islands"=>"Siargao Islands", "Shariff Kabunsuan"=>"Shariff Kabunsuan", "Siquijor"=>"Siquijor", "Sorsogon"=>"Sorsogon", "South Cotabato"=>"South Cotabato", "Southern Leyte"=>"Southern Leyte", "Sultan Kudarat"=>"Sultan Kudarat", "Sulu"=>"Sulu", "Surigao del Norte"=>"Surigao del Norte", "Surigao del Sur"=>"Surigao del Sur", "Tarlac"=>"Tarlac", "Tawi-Tawi"=>"Tawi-Tawi", "Zambales"=>"Zambales", "Zamboanga del Norte"=>"Zamboanga del Norte", "Zamboanga del Sur"=>"Zamboanga del Sur", "Zamboanga Sibugay"=>"Zamboanga Sibugay" },{},{:onclick=>"if(applicant_provinceName.value==' ') applicant_provinceName.value='Abra'; else{  applicant_points.value = updateProvinceValue(applicant_provinceName.value);  }" } ) %>
+	<%= f.hidden_field :points , :value=>"0" %>
+  </div>
+  <div class="field">
+    Gross Annual Income of Both Parents
+	<br/>
+    Php <%= f.text_field (:income)%>
+  </div>
+  <br/>
+  Parent's contact information:
+  <br/>
+  <br/>
+  <div class="field">
+    Parent's Email Address<br/>
+    <%= f.text_field :pEmail %>
+  </div>
+  <div class="field">
+    Parent's Telephone Number<br/>
+    <%= f.text_field :pNum, :size=>7 %>
+	<br/>
+    Area Code<br/>
+    <%= f.text_field :pAreaCode, :size=>3 %> 
+  </div>
+  <div class="field">
+    Parent's Cellphone Number<br/>
+    +63<%= f.text_field :pCell, :size=>10 %>
+  </div>
+  <br/>
+  Select your dormitories of choice and rank them according to preference, with Rank 1 of the highest favor.
+  <br/>
+  Female students cannot apply for the Maquiling Residence Hall and ATI Dormitory.
+  <br/>
+  <br/>
+
+	<%= f.label :"Rank 1" %> 
+	<%= text_field_tag  :rank1Text, "ACCI", :readonly=>"true", :size=>26,:onclick=>"rank1Text.value='Shit!'" %>
+	<%= text_field_tag :rank1Demote, "-", :readonly=>"true",  :size=>1, :onclick=>"	swapVariableText = rank1Text.value; 	swapVariableValue =  applicant_rank1.value; 	rank1Text.value = rank2Text.value; 	applicant_rank1.value = applicant_rank2.value; 	rank2Text.value = swapVariableText; 	applicant_rank2.value = swapVariableValue; " %>
+	
+	<%= f.hidden_field :rank1,  :value=>"acci" %>
+	<br/>
+	<%= f.label :"Rank 2" %> 
+	<%= text_field_tag :rank2Text, "Men's Residence Hall/COED", :size=>26,:readonly=>"true" %> 
+	<%= text_field_tag :rank2Promote, "+", :readonly=>"true",  :size=>1, :onclick=>"	swapVariableText = rank2Text.value;	swapVariableValue = applicant_rank2.value;		rank2Text.value = rank1Text.value;	applicant_rank2.value = applicant_rank1.value;		rank1Text.value = swapVariableText;	applicant_rank1.value = swapVariableValue;" %>
+	<%= text_field_tag :rank2Demote, "-", :readonly=>"true",  :size=>1, :onclick=>"	swapVariableText = rank2Text.value; 	swapVariableValue =  applicant_rank2.value; 	rank2Text.value = rank3Text.value; 	applicant_rank2.value = applicant_rank3.value; 	rank3Text.value = swapVariableText; 	applicant_rank3.value = swapVariableValue;" %>
+	
+	<%= f.hidden_field :rank2,  :value=>"mens" %>
+	
+	<br/>
+	<%= f.label :"Rank 3" %>
+	<%= text_field_tag :rank3Text, "New Dormitory", :size=>26,:readonly=>"true" %>
+	<%= text_field_tag :rank3Promote, "+", :readonly=>"true",  :size=>1, :onclick=>"	swapVariableText = rank3Text.value;	swapVariableValue = applicant_rank3.value;		rank3Text.value = rank2Text.value;	applicant_rank3.value = applicant_rank2.value;		rank2Text.value = swapVariableText;	applicant_rank2.value = swapVariableValue;" %>
+	<%= text_field_tag :rank3Demote, "-", :readonly=>"true",  :size=>1, :onclick=>"	swapVariableText = rank3Text.value; 	swapVariableValue =  applicant_rank3.value; 	rank3Text.value = rank4Text.value; 	applicant_rank3.value = applicant_rank4.value; 	rank4Text.value = swapVariableText; 	applicant_rank4.value = swapVariableValue; " %>
+	
+	<%= f.hidden_field :rank3,  :value=>"new" %>
+	
+	<br/>
+	
+	<%= f.label :"Rank 4" %>
+	<%= text_field_tag :rank4Text, "New Forestry Residence Hall",  :size=>26, :readonly=>"true", :onclick=>"alert (this.id);" %>
+	<%= text_field_tag :rank4Promote, "+", :readonly=>"true",  :size=>1, :onclick=>"	swapVariableText = rank4Text.value;	swapVariableValue = applicant_rank4.value;		rank4Text.value = rank3Text.value;	applicant_rank4.value = applicant_rank3.value;		rank3Text.value = swapVariableText;	applicant_rank3.value = swapVariableValue;		" %>
+	
+	<%= text_field_tag :rank4Demote, "-", :readonly=>"true",  :size=>1, :onclick=>"	swapVariableText = rank4Text.value; 	swapVariableValue =  applicant_rank4.value; 	rank4Text.value = rank5Text.value; 	applicant_rank4.value = applicant_rank5.value; 	rank5Text.value = swapVariableText; 	applicant_rank5.value = swapVariableValue; " %>
+	
+	<%= f.hidden_field :rank4,  :value=>"newforeha" %>
+	
+	<br/>
+	
+	<%= f.label :"Rank 5" %>
+	<%= text_field_tag :rank5Text, "ATI", :size=>26,:readonly=>"true" %>
+	<%= text_field_tag :rank5Promote, "+", :readonly=>"true",  :size=>1, :onclick=>"	swapVariableText = rank5Text.value;	swapVariableValue = applicant_rank5.value;		rank5Text.value = rank4Text.value;	applicant_rank5.value = applicant_rank4.value;		rank4Text.value = swapVariableText;	applicant_rank4.value = swapVariableValue;		" %>
+	
+	<%= text_field_tag :rank5Demote, "-", :readonly=>"true",  :size=>1, :onclick=>"	swapVariableText = rank5Text.value; 	swapVariableValue =  applicant_rank5.value; 	rank5Text.value = rank6Text.value; 	applicant_rank5.value = applicant_rank6.value; 	rank6Text.value = swapVariableText; 	applicant_rank6.value = swapVariableValue; 	" %>
+	
+	<%= f.hidden_field :rank5,  :value=>"ati" %>
+	
+	<br/>
+	
+	<%= f.label :"Rank 6" %>
+	<%= text_field_tag :rank6Text, "Maquiling Residence Hall", :size=>26,:readonly=>"true" %>
+	<%= text_field_tag :rank6Promote, "+", :readonly=>"true",  :size=>1, :onclick=>"	swapVariableText = rank6Text.value;	swapVariableValue = applicant_rank6.value;		rank6Text.value = rank5Text.value;	applicant_rank6.value = applicant_rank5.value;		rank5Text.value = swapVariableText;	applicant_rank5.value = swapVariableValue;" %>
+	<%= f.hidden_field :rank6, :value=>"mareha" %>
+	
+	<br/>
+	<br/>
+	<br/> 
+	
+	Upload the scanned images of the following in JPEG format. These documents are required to process your application.
+	<br/>
+	<br/>
+ <div class="field">
+	Income Tax Returns
+	<br/>
+    <%= f.file_field:image_file1%>
+  </div>
+  <br/>
+  <div class="field">
+	Meralco/Electricity Provider Bill<br/>
+    <%= f.file_field:image_file2 %>
+  </div>
+  <br/>
+  <div class="field">
+	Admission Slip
+	<br/>
+    <%= f.file_field:image_file3 %>
+  </div>
+  <br/>
+  <div class="field">
+	2"x2" Picture
+	<br/>
+    <%= f.file_field:image_file4 %>
+  </div>
+  
+  <br/>
+  Enter a password. You will be using this password for logging into the system in case you need to change any of your information in the future. Your username will be your student number.  
+  
+  <br/>
+  <br/>
+  
+  <div class="field">
+		<%=f.label :password%>
+	</div>
+	<div class="field">
+		<%=f.password_field :password%>
+  </div>
+
+  <div class="field">
+		<%=f.label :"Confirm password" %>
+	</div>
+	<div class="field">
+		<%=f.password_field :password_confirmation %>
+  </div>
+  
+	<%= f.hidden_field :id ,:value=>:sNum%> 
+	<br/>
+	<div class="actions">
+		<%= f.submit :onclick=>"applicant_points.value = updateIncomeValue(applicant_points.value, applicant_income.value); if(applicant_provinceName.value==' ') applicant_provinceName.value='Abra'; applicant_pEmail.value = applicant_pEmail.value.toLowerCase(); applicant_sName.value = applicant_sName.value.toLowerCase(); applicant_fName.value = applicant_fName.value.toLowerCase(); applicant_mName.value = applicant_mName.value.toLowerCase(); applicant_address.value = applicant_address.value.toLowerCase();  applicant_course.value = applicant_course.value.toLowerCase(); " %>
+  </div>
+  <br/>
+<% end %>

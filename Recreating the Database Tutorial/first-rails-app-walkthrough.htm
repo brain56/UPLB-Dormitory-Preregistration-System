@@ -1,0 +1,610 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>
+    First Rails App Walkthrough		=&gt; Rails Wiki  </title>
+
+  <meta name="generator" content="DokuWiki Release 2009-12-25c &quot;Lemming&quot;">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2010-11-14T00:48:15+0000">
+<meta name="keywords" content="getting-started,first-rails-app-walkthrough">
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.rubyonrails.org/lib/exe/opensearch.php" title="Rails Wiki">
+<link rel="start" href="http://wiki.rubyonrails.org/">
+<link rel="contents" href="http://wiki.rubyonrails.org/getting-started/first-rails-app-walkthrough?do=index" title="Index">
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://wiki.rubyonrails.org/feed.php">
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://wiki.rubyonrails.org/feed.php?mode=list&amp;ns=getting-started">
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://wiki.rubyonrails.org/_export/xhtml/getting-started/first-rails-app-walkthrough">
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://wiki.rubyonrails.org/_export/raw/getting-started/first-rails-app-walkthrough">
+<link rel="canonical" href="http://wiki.rubyonrails.org/getting-started/first-rails-app-walkthrough">
+<link rel="stylesheet" media="all" type="text/css" href="first-rails-app-walkthrough_files/css_003.css">
+<link rel="stylesheet" media="screen" type="text/css" href="first-rails-app-walkthrough_files/css.css">
+<link rel="stylesheet" media="print" type="text/css" href="first-rails-app-walkthrough_files/css_002.css">
+<script type="text/javascript" charset="utf-8"><!--//--><![CDATA[//><!--
+var NS='getting-started';var JSINFO = {"id":"getting-started:first-rails-app-walkthrough","namespace":"getting-started"};
+//--><!]]></script>
+<script type="text/javascript" charset="utf-8" src="first-rails-app-walkthrough_files/js.php"></script>
+<script type="text/javascript" charset="utf-8" src="first-rails-app-walkthrough_files/cms.js"></script>
+
+  <link rel="shortcut icon" href="http://wiki.rubyonrails.org/lib/tpl/rails/images/favicon.png">
+
+  </head><body>
+<div class="dokuwiki">
+  
+	<div class="stylehead">
+<!--
+			<div class="logo">
+  			<img src="/lib/tpl/rails/images/rails.png"/>
+         <a href="/"  name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[ALT+H]">Rails Wiki</a>        <a href="/getting-started/first-rails-app-walkthrough"  title="Backlinks">First Rails App Walkthrough</a>      </div>
+-->
+    <div class="bar" id="bar__top">
+      <div class="title">
+        <a href="http://wiki.rubyonrails.org/" name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[ALT+H]">Rails Wiki</a>      </div>
+
+			<div class="bar-right" id="bar__topright">
+				<form class="button btn_login" method="get" action="/getting-started/first-rails-app-walkthrough"><div class="no"><input name="do" value="login" type="hidden"><input name="sectok" value="afb4bac860601c6947cc7760fe0f025e" type="hidden"><input value="Login" class="button" title="Login" type="submit"></div></form>        <form action="/" accept-charset="utf-8" class="search" id="dw__search"><div class="no"><input name="do" value="search" type="hidden"><input id="qsearch__in" accesskey="f" name="id" class="edit" title="[F]" type="text"><input value="Search" class="button" title="Search" type="submit"><div style="display: none;" id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+
+        <div class="breadcrumbs">
+      <span class="bchead">You are here: </span><a href="http://wiki.rubyonrails.org/start" title="start">Rails Wiki</a> » <a href="http://wiki.rubyonrails.org/getting-started/start" title="getting-started:start">Getting Started</a> » <a href="http://wiki.rubyonrails.org/getting-started/first-rails-app-walkthrough" title="getting-started:first-rails-app-walkthrough">First Rails App Walkthrough</a>    </div>
+    
+  </div>
+  
+  
+  <div class="page">
+  <div class="plugin_translation"><span>Translations of this page<sup><a href="http://wiki.rubyonrails.org/getting-started/translating-the-wiki" class="wikilink1" title="getting-started:translating-the-wiki">?</a></sup>:</span> <ul>  <li><div class="li"><span class="curid"><a href="http://wiki.rubyonrails.org/getting-started/first-rails-app-walkthrough" class="wikilink1" title="getting-started:first-rails-app-walkthrough">en</a></span></div></li>  <li><div class="li"><a href="http://wiki.rubyonrails.org/de/getting-started/first-rails-app-walkthrough" class="wikilink2" title="de:getting-started:first-rails-app-walkthrough" rel="nofollow">de</a></div></li>  <li><div class="li"><a href="http://wiki.rubyonrails.org/el/getting-started/first-rails-app-walkthrough" class="wikilink2" title="el:getting-started:first-rails-app-walkthrough" rel="nofollow">el</a></div></li>  <li><div class="li"><a href="http://wiki.rubyonrails.org/es/getting-started/first-rails-app-walkthrough" class="wikilink1" title="es:getting-started:first-rails-app-walkthrough">es</a></div></li>  <li><div class="li"><a href="http://wiki.rubyonrails.org/fr/getting-started/first-rails-app-walkthrough" class="wikilink1" title="fr:getting-started:first-rails-app-walkthrough">fr</a></div></li>  <li><div class="li"><a href="http://wiki.rubyonrails.org/he/getting-started/first-rails-app-walkthrough" class="wikilink1" title="he:getting-started:first-rails-app-walkthrough">he</a></div></li>  <li><div class="li"><a href="http://wiki.rubyonrails.org/it/getting-started/first-rails-app-walkthrough" class="wikilink1" title="it:getting-started:first-rails-app-walkthrough">it</a></div></li>  <li><div class="li"><a href="http://wiki.rubyonrails.org/ja/getting-started/first-rails-app-walkthrough" class="wikilink1" title="ja:getting-started:first-rails-app-walkthrough">ja</a></div></li>  <li><div class="li"><a href="http://wiki.rubyonrails.org/ko/getting-started/first-rails-app-walkthrough" class="wikilink1" title="ko:getting-started:first-rails-app-walkthrough">ko</a></div></li>  <li><div class="li"><a href="http://wiki.rubyonrails.org/lt/getting-started/first-rails-app-walkthrough" class="wikilink1" title="lt:getting-started:first-rails-app-walkthrough">lt</a></div></li>  <li><div class="li"><a href="http://wiki.rubyonrails.org/pt/getting-started/first-rails-app-walkthrough" class="wikilink2" title="pt:getting-started:first-rails-app-walkthrough" rel="nofollow">pt</a></div></li>  <li><div class="li"><a href="http://wiki.rubyonrails.org/th/getting-started/first-rails-app-walkthrough" class="wikilink1" title="th:getting-started:first-rails-app-walkthrough">th</a></div></li>  <li><div class="li"><a href="http://wiki.rubyonrails.org/tr/getting-started/first-rails-app-walkthrough" class="wikilink1" title="tr:getting-started:first-rails-app-walkthrough">tr</a></div></li>  <li><div class="li"><a href="http://wiki.rubyonrails.org/zh/getting-started/first-rails-app-walkthrough" class="wikilink1" title="zh:getting-started:first-rails-app-walkthrough">zh</a></div></li></ul></div>    <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div style="cursor: pointer;" class="tocheader toctoggle" id="toc__header"><span class="toc_close" style="cursor: pointer;" id="toc__toggle"><span>−</span></span>Table of C<span class="search_hit">on</span>tents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#first_rails_app_walkthrough" class="toc">First <span class="search_hit">Rails</span> App Walkthrough</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#part_1_-_installation" class="toc">Part 1 - Installati<span class="search_hit">on</span></a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#part_2_-_create_run" class="toc">Part 2 - <span class="search_hit">Create</span> &amp; Run</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#part_3_-_creating_the_database_scaffold" class="toc">Part 3 - Creating the <span class="search_hit">Database</span> &amp; Scaffold</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#part_4_-_adding_functionality" class="toc">Part 4 - Adding Functi<span class="search_hit">on</span>ality</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#part_5_-_your_first_validation" class="toc">Part 5 - Your First Validati<span class="search_hit">on</span></a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#part_6_-_modifying_the_layout" class="toc">Part 6 - Modifying the Layout</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#part_7_-_having_fun_with_the_console" class="toc">Part 7 - Having fun with the c<span class="search_hit">on</span>sole</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#additional_reading" class="toc">Additi<span class="search_hit">on</span>al Reading</a></span></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><span class="li"><a href="#discussion__section" class="toc">Discussi<span class="search_hit">on</span></a></span></div></li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="first_rails_app_walkthrough" id="first_rails_app_walkthrough">First <span class="search_hit">Rails</span> App Walkthrough</a></h1>
+<div class="level1">
+
+<p>
+
+Want <span class="search_hit">to</span> get a taste of what it's like <span class="search_hit">to</span> develop with <span class="search_hit">Rails</span>?  Follow this tu<span class="search_hit">to</span>rial <span class="search_hit">to</span> get started!
+</p>
+
+</div>
+
+<h2><a name="part_1_-_installation" id="part_1_-_installation">Part 1 - Installati<span class="search_hit">on</span></a></h2>
+<div class="level2">
+
+<p>
+
+Install <span class="search_hit">Ruby</span>/<span class="search_hit">Rails</span> for your particular platform, and make sure you have SQLite installed (this comes with a Mac if you have a Mac). Installati<span class="search_hit">on</span> wiki pages can be found here: <a href="http://wiki.rubyonrails.org/getting-started/installation/mac" class="wikilink1" title="getting-started:installation:mac">Mac</a>, <a href="http://wiki.rubyonrails.org/getting-started/installation/windows" class="wikilink1" title="getting-started:installation:windows">Windows</a>, <a href="http://wiki.rubyonrails.org/getting-started/installation/linux" class="wikilink1" title="getting-started:installation:linux">Linux</a>.
+</p>
+
+</div>
+
+<h2><a name="part_2_-_create_run" id="part_2_-_create_run">Part 2 - <span class="search_hit">Create</span> &amp; Run</a></h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Run the <span class="search_hit">Rails</span> <span class="search_hit">command</span> line <span class="search_hit">to</span>ol <span class="search_hit">to</span> <span class="search_hit">create</span> the applicati<span class="search_hit">on</span>.<pre class="code">$ <span class="search_hit">rails</span> myapp</pre>
+
+<p>
+This will <span class="search_hit">create</span> the skele<span class="search_hit">to</span>n of your <span class="search_hit">Rails</span> app.
+</p>
+</div>
+</li>
+<li class="level1"><div class="li"> Go in<span class="search_hit">to</span> your direc<span class="search_hit">to</span>ry, probably by typing: <pre class="code">$ cd myapp</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Startup your <span class="search_hit">Rails</span> server by running: <pre class="code">$ <span class="search_hit">rails</span> server</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> If it asks you <span class="search_hit">to</span> bundle/install, do it and then re-run “<span class="search_hit">rails</span> server”.</div>
+</li>
+<li class="level1"><div class="li"> Call up a browser and go <span class="search_hit">to</span> <a href="http://localhost:3000/" class="urlextern" title="http://localhost:3000" rel="nofollow">http://localhost:3000</a>. You should see that <span class="search_hit">Rails</span> is running; that's all there is <span class="search_hit">to</span> it! Pat yourself <span class="search_hit">on</span> the back, you deserve it.</div>
+</li>
+</ol>
+
+</div>
+
+<h2><a name="part_3_-_creating_the_database_scaffold" id="part_3_-_creating_the_database_scaffold">Part 3 - Creating the <span class="search_hit">Database</span> &amp; Scaffold</a></h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Open the applicati<span class="search_hit">on</span> in your edi<span class="search_hit">to</span>r of choice.</div>
+</li>
+<li class="level1"><div class="li"> Open the <code>c<span class="search_hit">on</span>fig/<span class="search_hit">database</span>.yml</code> file.  This is where you would typically c<span class="search_hit">on</span>figure different <span class="search_hit">database</span>s for your applicati<span class="search_hit">on</span>, but for the sake of this example you shouldn't have <span class="search_hit">to</span> <span class="search_hit">to</span>uch anything. The default <span class="search_hit">database</span> names, as you may have noticed, are taken from the name of your <span class="search_hit">Rails</span> app.</div>
+</li>
+<li class="level1"><div class="li"> Open up another <span class="search_hit">command</span> prompt (that way we can keep the server running in the background), and in your applicati<span class="search_hit">on</span> direc<span class="search_hit">to</span>ry run: <pre class="code">$ rake db:<span class="search_hit">create</span></pre>
+
+<p>
+ This will <span class="search_hit">create</span> your development <span class="search_hit">database</span>.
+</p>
+</div>
+</li>
+<li class="level1"><div class="li"> Now we want <span class="search_hit">to</span> <span class="search_hit">create</span> our first table and interface. In <span class="search_hit">Rails</span>, this typically means we're going <span class="search_hit">to</span> <span class="search_hit">create</span> a <a href="http://guides.rubyonrails.org/getting_started.html#getting-up-and-running-quickly-with-scaffolding" class="urlextern" title="http://guides.rubyonrails.org/getting_started.html#getting-up-and-running-quickly-with-scaffolding" rel="nofollow">scaffold</a> <span class="search_hit">to</span>
+ start from. A scaffold is simply a starting point, and we can add 
+increasingly complex code from there. Let's first run the scaffold <span class="search_hit">command</span> without any parameters: <pre class="code">$ <span class="search_hit">rails</span> generate scaffold</pre>
+
+<p>
+ Take a look at the output generated. It shows you how <span class="search_hit">to</span> use the <span class="search_hit">command</span>.
+</p>
+</div>
+</li>
+<li class="level1"><div class="li"> Now let's go ahead and use scaffold <span class="search_hit">to</span> start generating our web applicati<span class="search_hit">on</span>. We're going <span class="search_hit">to</span> <span class="search_hit">create</span> a users table:<pre class="code">$ <span class="search_hit">rails</span> generate scaffold user first_name:string last_name:string active:boolean</pre>
+
+<p>
+ It's okay if you copy and paste this code, I w<span class="search_hit">on</span>'t tell any<span class="search_hit">on</span>e. So now your scaffold is <span class="search_hit">create</span>d, which is just a bunch of template files.
+</p>
+</div>
+</li>
+<li class="level1"><div class="li"> Let's <a href="http://guides.rubyonrails.org/getting_started_with_rails.html#_running_a_migration" class="urlextern" title="http://guides.rubyonrails.org/getting_started_with_rails.html#_running_a_migration" rel="nofollow">run the migrati<span class="search_hit">on</span></a> it <span class="search_hit">create</span>d for us (<span class="search_hit">to</span> <span class="search_hit">create</span> the <span class="search_hit">database</span> table). <pre class="code">$ rake db:migrate</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Now go back <span class="search_hit">to</span> your browser (start your server back up if you killed it), and go <span class="search_hit">to</span> <a href="http://localhost:3000/users" class="urlextern" title="http://localhost:3000/users" rel="nofollow">http://localhost:3000/users</a></div>
+</li>
+<li class="level1"><div class="li"> <span class="search_hit">Create</span> a few users, and play around with your <span class="search_hit">Rails</span> interface!</div>
+</li>
+</ol>
+
+</div>
+
+<h2><a name="part_4_-_adding_functionality" id="part_4_-_adding_functionality">Part 4 - Adding Functi<span class="search_hit">on</span>ality</a></h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> We just realized that we forgot <span class="search_hit">to</span> add a bio field for a user - oops! We could either <span class="search_hit">create</span> a new migrati<span class="search_hit">on</span> <span class="search_hit">to</span> add that column, or roll back the migrati<span class="search_hit">on</span> that was <span class="search_hit">create</span>d for us. Let's do the latter. <span class="search_hit">To</span> remove the table so we can add a column, run this <span class="search_hit">command</span>:<pre class="code">$ rake db:rollback</pre>
+
+<p>
+ This will roll back <span class="search_hit">on</span>e migrati<span class="search_hit">on</span>.
+</p>
+</div>
+</li>
+<li class="level1"><div class="li"> Now open the migrati<span class="search_hit">on</span> located in the <code>/db/migrati<span class="search_hit">on</span>s/</code> or <code>/db/migrate/</code> direc<span class="search_hit">to</span>ry. It should be the <span class="search_hit">on</span>ly file.</div>
+</li>
+<li class="level1"><div class="li"> Notice how the migrati<span class="search_hit">on</span> has an <code>up</code> method <span class="search_hit">to</span> migrate up, and <code>down</code> method <span class="search_hit">to</span> migrate down.</div>
+</li>
+<li class="level1"><div class="li"> We want <span class="search_hit">to</span> add that bio field, so after the <code>t.boolean :active</code> line, add: <pre class="code RUBY">t.<span class="me1">text</span> <span class="re3">:bio</span></pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Save the file, and run <code>rake db:migrate</code> again <span class="search_hit">to</span> migrate your <span class="search_hit">database</span> up: <pre class="code">$ rake db:migrate</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> If you checked your browser at this point, you'd notice that the bio field isn't au<span class="search_hit">to</span>matically showing up in our user's informati<span class="search_hit">on</span> or forms.  We will need <span class="search_hit">to</span> add this ourselves. Yes, we could have erased the files and run the scaffold <span class="search_hit">command</span> <span class="search_hit">to</span> get this field, but then you wouldn't learn anything.</div>
+</li>
+<li class="level1"><div class="li"> Lets open up the <code>/app/views/users/_form.html.erb</code> file, This will help in adding Bio opti<span class="search_hit">on</span> in New User form. We need <span class="search_hit">to</span> add a bio field using the following code below the active checkbox.<pre class="code RUBY">&lt;p&gt;
+  <span class="sy0">&lt;%</span>= f.<span class="me1">label</span> <span class="re3">:bio</span> <span class="sy0">%&gt;</span>&lt;br /&gt;
+  <span class="sy0">&lt;%</span>= f.<span class="me1">text_area</span> <span class="re3">:bio</span> <span class="sy0">%&gt;</span>
+&lt;/p&gt;</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Now open up the New User page in your browser <a href="http://localhost:3000/users/new" class="urlextern" title="http://localhost:3000/users/new" rel="nofollow">http://localhost:3000/users/new</a>. You should see the bio field, and be able <span class="search_hit">to</span> add new users with a bio.</div>
+</li>
+<li class="level1"><div class="li"> When you <span class="search_hit">create</span> a user, you're brought au<span class="search_hit">to</span>matically <span class="search_hit">to</span> his/her show page. Let's add the bio <span class="search_hit">to</span> the show page. You can do this by opening the <code>/app/views/users/show.html.erb</code> file, and underneath the Active field, adding:<pre class="code RUBY">&lt;p&gt;
+  &lt;b&gt;Bio:&lt;/b&gt;
+  <span class="sy0">&lt;%</span>=h <span class="re1">@user</span>.<span class="me1">bio</span> <span class="sy0">%&gt;</span>
+&lt;/p&gt;</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Save the file and check it out in the browser. If you d<span class="search_hit">on</span>'t see your change at first, make sure you are <span class="search_hit">on</span> the <code>show</code> page (and not the <code>index</code>). When you get <span class="search_hit">to</span> this part, let out a barbaric “woot!”, you've made some great progress.</div>
+</li>
+</ol>
+
+<p>
+- You would have noticed that our recently added bio field should now appear when we try <span class="search_hit">to</span> edit <span class="search_hit">on</span>e of the users entry. This is because <code>/app/views/users/_form.html.erb</code> is included in <code>/app/views/users/new.html.erb</code> and <code>/app/views/users/edit.html.erb</code> dynamically with the following line:
+</p>
+<pre class="code RUBY"><span class="sy0">&lt;%</span>= render <span class="st0">'form'</span> <span class="sy0">%&gt;</span></pre>
+
+<p>
+<span class="search_hit">On</span>ce you d<span class="search_hit">on</span>e with this try <span class="search_hit">to</span> edit <span class="search_hit">on</span>e of the users entered values you will see a bio box, <span class="search_hit">to</span>o, for editing.
+</p>
+
+</div>
+
+<h2><a name="part_5_-_your_first_validation" id="part_5_-_your_first_validation">Part 5 - Your First Validati<span class="search_hit">on</span></a></h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> In <span class="search_hit">Rails</span>, we put our validati<span class="search_hit">on</span>s in our model files, so let's open <code>/app/models/user.rb</code>.</div>
+</li>
+<li class="level1"><div class="li"> We want <span class="search_hit">to</span> require that a user enter their first name and last name, so let's add validati<span class="search_hit">on</span> <span class="search_hit">to</span> our User model, so it ends up looking like this: <pre class="code RUBY"><span class="kw1">class</span> User <span class="sy0">&lt;</span> <span class="re2">ActiveRecord::Base</span>
+  validates_presence_of <span class="re3">:first_name</span>, <span class="re3">:last_name</span>
+<span class="kw1">end</span></pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Save the file, go <span class="search_hit">to</span> your browser, and attempt <span class="search_hit">to</span> <span class="search_hit">create</span> a user without a first name or last name.</div>
+</li>
+<li class="level1"><div class="li"> <span class="search_hit">Rails</span> has many helper validati<span class="search_hit">on</span> classes, and you can see a list <span class="search_hit">on</span> the right side <a href="http://apidock.com/rails/ActiveRecord/Validations/ClassMethods" class="urlextern" title="http://apidock.com/rails/ActiveRecord/Validations/ClassMethods" rel="nofollow">of this API page</a>. </div>
+</li>
+</ol>
+
+<p>
+<a href="http://wiki.rubyonrails.org/_detail/getting-started/installation/information.png?id=getting-started%3Afirst-rails-app-walkthrough" class="media" title="getting-started:installation:information.png"><img src="first-rails-app-walkthrough_files/information.png" class="media" alt=""></a>
+For extra credit, add another validati<span class="search_hit">on</span> <span class="search_hit">to</span> your app just for fun.
+</p>
+
+</div>
+
+<h2><a name="part_6_-_modifying_the_layout" id="part_6_-_modifying_the_layout">Part 6 - Modifying the Layout</a></h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> If you viewed the browser <acronym title="HyperText Markup Language">HTML</acronym> source of your applicati<span class="search_hit">on</span>, you may have noticed that your applicati<span class="search_hit">on</span> is in some sort of layout. By default, when you ran the <code>scaffold</code> <span class="search_hit">command</span>, a <code>/app/views/layouts/users.html.erb</code> file was <span class="search_hit">create</span>d, and used as your layout.</div>
+</li>
+<li class="level1"><div class="li"> You'll probably <span class="search_hit">on</span>ly want <span class="search_hit">to</span> use <span class="search_hit">on</span>e layout for most of your c<span class="search_hit">on</span>trollers, so let's give this a more generic name. Rename <code>users.html.erb</code> <span class="search_hit">to</span> <code>applicati<span class="search_hit">on</span>.html.erb</code>. As a <span class="search_hit">Rails</span> c<span class="search_hit">on</span>venti<span class="search_hit">on</span>, now that you have an <code>applicati<span class="search_hit">on</span>.html.erb</code> file in your layouts direc<span class="search_hit">to</span>ry, all c<span class="search_hit">on</span>trollers will use this by default (you can override this later if you want).</div>
+</li>
+<li class="level1"><div class="li"> Let's add something <span class="search_hit">to</span> our layout just for fun. Open up the <code>applicati<span class="search_hit">on</span>.html.erb</code> and add something like: <pre class="code HTML">&lt;h2&gt;<span class="search_hit">Rails</span> Rocks!&lt;/h2&gt;</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Save the file, go <span class="search_hit">to</span> your browser, and you should see the change you made reflected <span class="search_hit">on</span> ALL pages of the website.</div>
+</li>
+</ol>
+
+</div>
+
+<h2><a name="part_7_-_having_fun_with_the_console" id="part_7_-_having_fun_with_the_console">Part 7 - Having fun with the c<span class="search_hit">on</span>sole</a></h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Let's have some fun playing with our User Model. In your <span class="search_hit">command</span> prompt, type:<pre class="code">$ <span class="search_hit">rails</span> c<span class="search_hit">on</span>sole</pre>
+
+<p>
+ You are now in a <span class="search_hit">Ruby</span> IRB sessi<span class="search_hit">on</span> which has access <span class="search_hit">to</span> your models.
+</p>
+</div>
+</li>
+<li class="level1"><div class="li"> Before we start playing, run the following <span class="search_hit">command</span> so that we can see what <acronym title="Structured Query Language">SQL</acronym> <span class="search_hit">command</span>s are going <span class="search_hit">to</span> be generated for us. <pre class="code">$ ActiveRecord::Base.logger = Logger.new(STDOUT)</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Let's try a simple <span class="search_hit">Ruby</span> statement <span class="search_hit">to</span> make sure everything is working:<pre class="code RUBY"><span class="kw3">puts</span> <span class="st0">"Hello Dude!"</span></pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Now let's try having some fun with our model. <span class="search_hit">Create</span> a new model by doing something like this:<pre class="code RUBY">u = User.<span class="me1">new</span>
+u.<span class="me1">first_name</span> = <span class="st0">"Gregg"</span>
+u.<span class="me1">last_name</span> = <span class="st0">"Pollack"</span>
+u.<span class="me1">save</span></pre>
+
+<p>
+ Notice the <acronym title="Structured Query Language">SQL</acronym> that is generated.
+</p>
+</div>
+</li>
+<li class="level1"><div class="li"> Now try doing it all in a single line:<pre class="code RUBY">User.<span class="me1"><span class="search_hit">create</span></span><span class="br0">(</span><span class="re3">:first_name</span> <span class="sy0">=&gt;</span> <span class="st0">"Joe"</span>, <span class="re3">:last_name</span> <span class="sy0">=&gt;</span> <span class="st0">"Blow"</span><span class="br0">)</span></pre>
+
+<p>
+ If you hit any errors, check for syntax problems.
+</p>
+</div>
+</li>
+<li class="level1"><div class="li"> Let's fetch the user with first name of Joe, and change his last name <span class="search_hit">to</span> “Johns<span class="search_hit">on</span>”. <pre class="code RUBY">u = User.<span class="me1">find_by_first_name</span><span class="br0">(</span><span class="st0">"Joe"</span><span class="br0">)</span>
+u.<span class="me1">last_name</span> = <span class="st0">"Johns<span class="search_hit">on</span>"</span>
+u.<span class="me1">save</span></pre>
+
+<p>
+ Notice the <acronym title="Structured Query Language">SQL</acronym> that gets generated; nice!
+</p>
+</div>
+</li>
+<li class="level1"><div class="li"> Now let's delete the user. <pre class="code RUBY">u.<span class="me1">destroy</span></pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Have some fun trying the following <span class="search_hit">command</span>s <span class="search_hit">to</span> see what they do: <pre class="code RUBY">User.<span class="me1">first</span>
+User.<span class="me1">last</span>
+User.<span class="me1">all</span></pre>
+
+<p>
+ Feel free <span class="search_hit">to</span> set a variable with the values, and play around with changing attributes. Do note that <code>.all</code> returns an array, so you may want <span class="search_hit">to</span> use [0] or [2] <span class="search_hit">to</span> refer <span class="search_hit">to</span> a particular item in the array.
+</p>
+</div>
+</li>
+<li class="level1"><div class="li"> Let's print out all the users in your system in upper case: <pre class="code RUBY">User.<span class="me1">all</span>.<span class="me1">each</span> <span class="br0">{</span><span class="sy0">|</span>user<span class="sy0">|</span> <span class="kw3">puts</span> user.<span class="me1">first_name</span>.<span class="me1">upcase</span> <span class="br0">}</span></pre>
+</div>
+</li>
+<li class="level1"><div class="li"> You'll notice that it prints out the first names, and then it also returns the array of Users. Remember, every method in <span class="search_hit">Ruby</span> returns something, even if it's nil.</div>
+</li>
+<li class="level1"><div class="li"> Let's <span class="search_hit">create</span> an array of all of the last names in our system: <pre class="code RUBY">User.<span class="me1">all</span>.<span class="me1">map</span> <span class="br0">{</span><span class="sy0">|</span>user<span class="sy0">|</span> user.<span class="me1">last_name</span> <span class="br0">}</span></pre>
+
+<p>
+ What we're interested in here is the return value, which should be an array of last names.
+</p>
+</div>
+</li>
+<li class="level1"><div class="li"> Take a look at the <a href="http://apidock.com/rails/ActiveRecord/Base" class="urlextern" title="http://apidock.com/rails/ActiveRecord/Base" rel="nofollow">API page here</a>. Al<span class="search_hit">on</span>g the right you'll see all of the methods you can run <span class="search_hit">on</span> ActiveRecord objects. Try a few.</div>
+</li>
+</ol>
+
+</div>
+
+<h2><a name="additional_reading" id="additional_reading">Additi<span class="search_hit">on</span>al Reading</a></h2>
+<div class="level2">
+
+<p>
+
+ The <a href="http://guides.rubyonrails.org/getting_started.html" class="urlextern" title="http://guides.rubyonrails.org/getting_started.html" rel="nofollow">Getting Started with <span class="search_hit">Rails</span> Guide</a> c<span class="search_hit">on</span>tains another fun walkthrough, but with additi<span class="search_hit">on</span>al explanati<span class="search_hit">on</span> of <span class="search_hit">Rails</span> architecture.
+</p>
+
+</div>
+<div class="comment_wrapper">
+  <h2><a name="discussion__section" id="discussion__section">
+    Discussion
+  </a></h2>
+  <div class="level2 hfeed">
+    <div class="hentry">
+      <div class="comment_head">
+        <a name="comment_53dd6e31c73e1b87bd6e07fb6cde296c" id="comment_53dd6e31c73e1b87bd6e07fb6cde296c"></a>
+        <span class="vcard author"><span class="fn">Tim Warner</span></span>, <abbr class="published" title="2009-04-11T05:28:10Z">2009/04/11 05:28</abbr>
+      </div>
+      <div class="comment_body entry-content" style="margin-left: 20px;">
+
+<p>
+I got as far as 3.6, but when I try <span class="search_hit">to</span> see my applicati<span class="search_hit">on</span> in the browser, I just get “We're sorry, but something went wr<span class="search_hit">on</span>g.”
+</p>
+
+<p>
+What does this mean? Where do I look <span class="search_hit">to</span> solve this?
+
+</p>
+
+      </div>
+      <div class="comment_buttons">
+      </div>
+    </div>
+    <div class="hentry">
+      <div class="comment_head">
+        <a name="comment_2ee39073166da2fd479b56b5d733d402" id="comment_2ee39073166da2fd479b56b5d733d402"></a>
+        <span class="vcard author"><span class="fn">Shane Riley</span></span>, <abbr class="published" title="2009-04-21T12:36:43Z">2009/04/21 12:36</abbr>
+      </div>
+      <div class="comment_body entry-content" style="margin-left: 20px;">
+
+<p>
+Tim, I believe this is because you d<span class="search_hit">on</span>'t have the server running. As it says in 3.3, you should probably have two Terminal windows open, <span class="search_hit">on</span>e <span class="search_hit">to</span> start and s<span class="search_hit">to</span>p the server (<span class="search_hit">ruby</span> script/server <span class="search_hit">to</span> start, Ctrl-C <span class="search_hit">to</span> s<span class="search_hit">to</span>p) and <span class="search_hit">on</span>e for your other <span class="search_hit">command</span>s.
+
+</p>
+
+      </div>
+      <div class="comment_buttons">
+      </div>
+    </div>
+    <div class="hentry">
+      <div class="comment_head">
+        <a name="comment_9d3a27e4dc11d8011f39938b28ee1f16" id="comment_9d3a27e4dc11d8011f39938b28ee1f16"></a>
+        <span class="vcard author"><span class="fn">Umur Ozkul</span></span>, <abbr class="published" title="2009-05-09T04:43:06Z">2009/05/09 04:43</abbr>
+      </div>
+      <div class="comment_body entry-content" style="margin-left: 20px;">
+
+<p>
+You can <span class="search_hit">create</span> producti<span class="search_hit">on</span> quality <acronym title="Asynchronous JavaScript and XML">AJAX</acronym> supported db applicati<span class="search_hit">on</span> right away as your first applicati<span class="search_hit">on</span>. Tested <span class="search_hit">on</span> Jaunty. <a href="http://tinyurl.com/ruby-on-rails-tutorial" class="urlextern" title="http://tinyurl.com/ruby-on-rails-tutorial" rel="nofollow">http://tinyurl.com/<span class="search_hit">ruby</span>-<span class="search_hit">on</span>-<span class="search_hit">rails</span>-tu<span class="search_hit">to</span>rial</a>
+
+</p>
+
+      </div>
+      <div class="comment_buttons">
+      </div>
+    </div>
+    <div class="hentry">
+      <div class="comment_head">
+        <a name="comment_8fa1d41ddd93f631de2f25a278ad06ec" id="comment_8fa1d41ddd93f631de2f25a278ad06ec"></a>
+        <span class="vcard author"><span class="fn">tony greenwood</span></span>, <abbr class="published" title="2009-05-20T09:38:38Z">2009/05/20 09:38</abbr>
+      </div>
+      <div class="comment_body entry-content" style="margin-left: 20px;">
+
+<p>
+I found I had <span class="search_hit">to</span> use User.find(:all) instead of User.all (and the same for the other  examples). I'm using <span class="search_hit">Rails</span> 2.0.1.
+
+</p>
+
+      </div>
+      <div class="comment_buttons">
+      </div>
+    </div>
+    <div class="hentry">
+      <div class="comment_head">
+        <a name="comment_606e7398cc467526806a7c85e9433deb" id="comment_606e7398cc467526806a7c85e9433deb"></a>
+        <span class="vcard author"><span class="fn">Sierra Katow</span></span>, <abbr class="published" title="2009-05-22T03:11:47Z">2009/05/22 03:11</abbr>
+      </div>
+      <div class="comment_body entry-content" style="margin-left: 20px;">
+
+<p>
+After finishing part 3, I went <span class="search_hit">to</span> check /users/new and got this 404 error:
+</p>
+
+<p>
+The page you were looking for doesn't exist.
+</p>
+
+<p>
+You may have mistyped the address or the page may have moved.
+</p>
+
+      </div>
+      <div class="comment_buttons">
+      </div>
+    </div>
+    <div class="hentry">
+      <div class="comment_head">
+        <a name="comment_b92158814ff73162fd31fc8d2e1e79f4" id="comment_b92158814ff73162fd31fc8d2e1e79f4"></a>
+        <span class="vcard author"><span class="fn">skim</span></span>, <abbr class="published" title="2009-12-17T08:08:10Z">2009/12/17 08:08</abbr>
+      </div>
+      <div class="comment_body entry-content" style="margin-left: 20px;">
+
+<p>
+I followed through everything and it seems fine.
+
+</p>
+
+      </div>
+      <div class="comment_buttons">
+      </div>
+    </div>
+    <div class="hentry">
+      <div class="comment_head">
+        <a name="comment_4e3ad6db84b9713d80cb1f340d1d0b19" id="comment_4e3ad6db84b9713d80cb1f340d1d0b19"></a>
+        <span class="vcard author"><span class="fn">Wesley Spikes</span></span>, <abbr class="published" title="2010-03-23T22:12:39Z">2010/03/23 22:12</abbr>
+      </div>
+      <div class="comment_body entry-content" style="margin-left: 20px;">
+
+<p>
+In case any<span class="search_hit">on</span>e else has any troubles with this, I had <span class="search_hit">to</span> restart Passenger after step 3 <span class="search_hit">to</span> get it <span class="search_hit">to</span> recognize the new c<span class="search_hit">on</span>troller. You can do this by running:
+</p>
+
+<p>
+<span class="search_hit">to</span>uch tmp/restart.txt
+
+</p>
+
+      </div>
+      <div class="comment_buttons">
+      </div>
+    </div>
+    <div class="hentry">
+      <div class="comment_head">
+        <a name="comment_079407a3bf0509748f33d45fc90a60a7" id="comment_079407a3bf0509748f33d45fc90a60a7"></a>
+        <span class="vcard author"><span class="fn">Michael bClasen</span></span>, <abbr class="published" title="2010-07-18T00:39:12Z">2010/07/18 00:39</abbr>
+      </div>
+      <div class="comment_body entry-content" style="margin-left: 20px;">
+
+<p>
+Worked great for me - everything was A-OK
+
+</p>
+
+      </div>
+      <div class="comment_buttons">
+      </div>
+    </div>
+    <div class="hentry">
+      <div class="comment_head">
+        <a name="comment_9b244301b620266461e57d2d9fcbab84" id="comment_9b244301b620266461e57d2d9fcbab84"></a>
+        <span class="vcard author"><span class="fn">soymilk</span></span>, <abbr class="published" title="2010-12-28T18:38:30Z">2010/12/28 18:38</abbr>
+      </div>
+      <div class="comment_body entry-content" style="margin-left: 20px;">
+
+<p>
+i could not do part 7 is this d<span class="search_hit">on</span>e inside <span class="search_hit">rails</span> c<span class="search_hit">on</span>sole ?
+ ActiveRecord::Base.logger = Logger.new(STDOUT)
+</p>
+
+      </div>
+      <div class="comment_buttons">
+      </div>
+    </div>
+    <div class="hentry">
+      <div class="comment_head">
+        <a name="comment_e8755f77218ae6342520841503a5c37d" id="comment_e8755f77218ae6342520841503a5c37d"></a>
+        <span class="vcard author"><span class="fn">soymilk</span></span>, <abbr class="published" title="2010-12-28T18:42:08Z">2010/12/28 18:42</abbr>
+      </div>
+      <div class="comment_body entry-content" style="margin-left: 20px;">
+
+<p>
+also 7.4 gives me this error 
+u = User.new
+SyntaxError: compile error
+(irb):8: syntax error, unexpected tRSHFT
+</p>
+<blockquote><div class="no">
+<blockquote><div class="no">
+ u = User.new<pre class="code">^
+from (irb):8</pre>
+
+<p>
+i tried with the name of my table dentista got same error 
+</p>
+</div></blockquote>
+</div></blockquote>
+
+      </div>
+      <div class="comment_buttons">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+      <div class="doc">
+        getting-started/first-rails-app-walkthrough.txt · Last modified: 2010/11/14 00:48 by stanto      </div>
+    </div>
+
+   
+    <div class="bar" id="bar__bottom">
+      <div class="bar-left" id="bar__bottomleft">
+        <form class="button btn_source" method="post" action="/getting-started/first-rails-app-walkthrough"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="" type="hidden"><input value="Show pagesource" class="button" accesskey="v" title="Show pagesource [V]" type="submit"></div></form>        <form class="button btn_revs" method="get" action="/getting-started/first-rails-app-walkthrough"><div class="no"><input name="do" value="revisions" type="hidden"><input value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" type="submit"></div></form>        <form class="button btn_recent" method="get" action="/getting-started/first-rails-app-walkthrough"><div class="no"><input name="do" value="recent" type="hidden"><input value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" type="submit"></div></form>      </div>
+      <div class="bar-right" id="bar__bottomright">
+                                <form class="button btn_login" method="get" action="/getting-started/first-rails-app-walkthrough"><div class="no"><input name="do" value="login" type="hidden"><input name="sectok" value="afb4bac860601c6947cc7760fe0f025e" type="hidden"><input value="Login" class="button" title="Login" type="submit"></div></form>        <form class="button btn_index" method="get" action="/getting-started/first-rails-app-walkthrough"><div class="no"><input name="do" value="index" type="hidden"><input value="Index" class="button" accesskey="x" title="Index [X]" type="submit"></div></form>        <a class="nolink" href="#dokuwiki__top"><input class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" type="button"></a>&nbsp;
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="footerinc">
+  <a href="http://wiki.rubyonrails.org/feed.php" title="Recent changes RSS feed"><img src="first-rails-app-walkthrough_files/button-rss.png" alt="Recent changes RSS feed" width="80" height="15"></a>
+
+  <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/" rel="license" title="Creative Commons License"><img src="first-rails-app-walkthrough_files/button-cc.gif" alt="Creative Commons License" width="80" height="15"></a>
+
+
+
+
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   <license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by-nc-sa/2.0/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <prohibits rdf:resource="http://web.resource.org/cc/CommercialUse" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+</License>
+
+</rdf:RDF>
+
+-->
+
+
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="first-rails-app-walkthrough_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-7795201-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<div class="no"><img src="first-rails-app-walkthrough_files/indexer.gif" alt="" width="1" height="1"></div>
+</body></html>
