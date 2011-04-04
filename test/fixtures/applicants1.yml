@@ -1,0 +1,33 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: "Brian Lee"
+  sNum: 2008-24940
+  sex: Male
+  course: BSCS
+  college: CAS
+  address: BULACAN
+  province: 2
+  pEmail: parents1@yahoo.com
+  pNum: 09221234567
+  pAreaCode: 46
+  pCell: 09227654322
+  mens: 1
+  acci: 2
+  ati: 3
+
+two:
+  name: "Brian Tria"
+  sNum: 2008-42898
+  sex: Male
+  course: BSCS
+  college: CAS
+  address: CATANDUANES
+  province: 1
+  pEmail: parents2@yahoo.com
+  pNum: 09221234534
+  pAreaCode: 46
+  pCell: 0922765476
+  mens: 1
+  acci: 2
+  ati: 3

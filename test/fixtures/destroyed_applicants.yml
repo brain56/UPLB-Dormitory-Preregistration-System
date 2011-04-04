@@ -1,0 +1,59 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  income: 1
+  itr: 
+  electricity: 
+  admission: 
+  picture: 
+  sName: Brian
+  fName: Tria
+  mName: G
+  sNum: 2008-42898
+  sex: Male
+  course: BSCS
+  college: CAS
+  address: demarses
+  pEmail: aaaaa@aaaa.com
+  pNum: 1234567
+  pAreaCode: 123
+  pCell: 09090909099
+  rank1: mens
+  rank2: mens
+  rank3: mens
+  rank4: mens
+  rank5: mens
+  rank6: mens
+  created_at: 2011-03-21 14:37:34
+  updated_at: 2011-03-21 14:37:34
+  provinceName: Catanduanes
+
+two:
+  id: 2
+  income: 1000
+  itr: 
+  electricity: 
+  admission: 
+  picture: 
+  sName: Brian
+  fName: Tria
+  mName: G
+  sNum: 2008-42899
+  sex: Male
+  course: BSCS
+  college: CAS
+  address: demarses
+  pEmail: aaaaa@aaaa.com
+  pNum: 1234567
+  pAreaCode: 123
+  pCell: 09090909099
+  rank1: mens
+  rank2: mens
+  rank3: mens
+  rank4: mens
+  rank5: mens
+  rank6: mens
+  created_at: 2011-03-21 14:37:34
+  updated_at: 2011-03-21 14:37:34
+  provinceName: Catanduanes
